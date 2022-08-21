@@ -28,20 +28,66 @@ label {
     margin: .5px;
 }
 input {
-    border: 2px solid red;
+    border: 2px dotted red;
     border-radius: 4px;
   }
 textarea {
-    border: 2px solid red;
+    border: 2px dotted red;
     border-radius: 4px;
   }
 button {
     padding: 5px;
     margin: 2px;
-    border: 2px solid red;
+    border: 2px dashed red;
     border-radius: 4px;
   }
-  
+
+  li, a {
+    font-family: cursive;
+    font-weight: 500;
+    font-size: 18px;
+    color:rgb(61, 20, 225)
+    text-decoration: none;
+    padding: 2px;
+  }
+
+  header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2px 5%;
+  }
+
+  .nav_links {
+    list-style: none;
+  }
+
+  .nav_links li {
+    display: inline-block;
+    padding 0px 20px;
+  }
+
+  .nav_links li a {
+    transition: all 0.3s ease 0s;
+    position: sticky;
+  }
+
+  .nav_links li a:hover {
+    color:aliceblue;
+  }
+
+  .container {
+    padding: 1px;
+    margin: 5px;
+    box-shadow: 0;
+  }
+  .item {
+    color: darkblue;
+    padding: 1px;
+    margin: 2px;	
+    border-radius: 0px;
+  }
+
   [class*="col-"] {
     width: 100%;
   }
