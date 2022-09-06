@@ -35,3 +35,30 @@ messageForm.addEventListener('submit', (e) => {
     messageList.appendChild(newMessage);
     messageForm.reset();
 });
+
+// const githubRequest = new XMLHttpRequest();
+githubRequest.open('GET', 'https://api.github.com/users/{GITHUB_EZAMMAR25}/repos');
+githubRequest.send();
+// githubRequest.addEventListener('load', function () {
+//     let repositories = JSON.parse(this.response);
+//     console.log(repositories);
+//     const projectSection = document.getElementById('projects');
+//     const projectList = projectSection.querySelector('ul');
+
+//     for(let i=0; i < repositories.length; i++) {
+//         const project = document.createElement('li');
+//         projectList.appendChild(project);
+//     }
+// });
+fetch('https://api.github.com/users/{GITHUB_EZAMMAR25}/repos')
+    .then(response => response.json())
+    .then(githubRequest.addEventListener('load', function () {
+        let repositories = JSON.parse(this.response);
+        console.log(repositories);
+        const projectSection = document.getElementById('projects');
+        const projectList = projectSection.querySelector('ul');
+    
+        for(let i=0; i < repositories.length; i++) {
+            const project = document.createElement('li');
+            projectList.appendChild(project); 
+        }}));
