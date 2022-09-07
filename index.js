@@ -61,4 +61,5 @@ fetch('https://api.github.com/users/{GITHUB_EZAMMAR25}/repos')
         for(let i=0; i < repositories.length; i++) {
             const project = document.createElement('li');
             projectList.appendChild(project); 
-        }}));
+        }})
+        );
