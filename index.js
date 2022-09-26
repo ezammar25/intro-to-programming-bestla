@@ -50,16 +50,22 @@ githubRequest.send();
 //         projectList.appendChild(project);
 //     }
 // });
-fetch('https://api.github.com/users/{GITHUB_EZAMMAR25}/repos')
-    .then(response => response.json())
+fetch("https://api.github.com/users/ezammar25/repos")
+    .then((response) => response.json())
     .then(githubRequest.addEventListener('load', function () {
         let repositories = JSON.parse(this.response);
         console.log(repositories);
-        const projectSection = document.getElementById('projects');
-        const projectList = projectSection.querySelector('ul');
+    .then((repositories) => {
+        let freposs = repositories.filter(repo) =>
+        repo.name.includes('intro-to-programming-bestla')
+    })
+
+        let projectSection = document.getElementById('projects');
+        let projectList = projectSection.querySelector('ul');
     
         for(let i=0; i < repositories.length; i++) {
-            const project = document.createElement('li');
+            let project = document.createElement('li');
+            project.innerHTML = `<a href="${repositories.html_url}">${repositories.name}</a>`
             projectList.appendChild(project); 
         }})
         );
