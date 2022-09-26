@@ -35,3 +35,37 @@ messageForm.addEventListener('submit', (e) => {
     messageList.appendChild(newMessage);
     messageForm.reset();
 });
+
+// const githubRequest = new XMLHttpRequest();
+githubRequest.open('GET', 'https://api.github.com/users/{GITHUB_EZAMMAR25}/repos');
+githubRequest.send();
+// githubRequest.addEventListener('load', function () {
+//     let repositories = JSON.parse(this.response);
+//     console.log(repositories);
+//     const projectSection = document.getElementById('projects');
+//     const projectList = projectSection.querySelector('ul');
+
+//     for(let i=0; i < repositories.length; i++) {
+//         const project = document.createElement('li');
+//         projectList.appendChild(project);
+//     }
+// });
+fetch("https://api.github.com/users/ezammar25/repos")
+    .then((response) => response.json())
+    .then(githubRequest.addEventListener('load', function () {
+        let repositories = JSON.parse(this.response);
+        console.log(repositories);
+    .then((repositories) => {
+        let freposs = repositories.filter(repo) =>
+        repo.name.includes('intro-to-programming-bestla')
+    })
+
+        let projectSection = document.getElementById('projects');
+        let projectList = projectSection.querySelector('ul');
+    
+        for(let i=0; i < repositories.length; i++) {
+            let project = document.createElement('li');
+            project.innerHTML = `<a href="${repositories.html_url}">${repositories.name}</a>`
+            projectList.appendChild(project); 
+        }})
+        );
